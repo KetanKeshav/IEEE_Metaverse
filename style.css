@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+body {
+    background-color: #0f111a;
+
+  margin: 0;
+}
+
+/* Navigation bar styling */
+
+.nav{
+    background-color: none;
+}
+
+li{
+    list-style: none;
+}
+
+.nav li a{
+    color: white;
+    font-size: 12px;
+
+}
+
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 24px;
+
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.nav-link{
+    transition: 0.7s ease;
+    font-size: 15px;
+}
+
+.nav-link:hover{
+    color: #75d481;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    color: white;
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+}
+
+.nav-branding{
+    width: 100px;
+    height: 50px;
+}
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 48px;
+}
+p {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #333333;
+}
+
+.header {
+  position: relative;
+  text-align: center;
+  background: #11131e;
+  color: white;
+}
+
+.inner-header {
+  height: 65vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  margin-bottom: -7px; /*Fix for safari gap*/
+  min-height: 100px;
+  max-height: 150px;
+}
+
+.content {
+  position: relative;
+  height: 20vh;
+  text-align: center;
+  background-color: white;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+@keyframes move-forever {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
+}
+/*Shrinking for mobile*/
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+}
+
+/* Body code */
+
+.main {
+  height: 160vh;
+  padding: 0;
+  color: white;
+  background: #11131e;
+}
+
+.main .cop{
+    position: relative;
+    top: 80px;
+    border-radius: 20px;
+    height: 10vh;
+    width: 80%;
+    margin:auto;
+    background-color: #75d481;
+    color: #11131e;
+}
+
+.main .cop p{
+    color: #11131e;
+    padding-top: 10px;
+    font-size: 26px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.main .intro{
+    position: relative;
+    top: 110px;
+    width: 80%;
+    font-size: 13px;
+    font-weight: 300;
+    color: white;
+    margin: auto;
+    line-height: 22px;
+}
+
+.main .intro p{
+    font-size: 13px;
+    font-weight: 300;
+    color: white;
+}
+
+.footer{
+    height: 8vh;
+}
+
+.footer p{
+    font-size: 10px;
+    color: white;
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+    color: #75d481;                                                                                     
+}
+
+/* 
+.footer{
+    height: 15vh;
+    position: relative;
+    bottom: 15px;
+    top: -10px;
+    margin-top:0px ;
+    margin-bottom: 0px;
+    margin: 0;
+    color: white;
+    background-color: #0f111a;
+} */
+
+@media (max-width: 768px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+        
+    }
+
+
+    .hamburger.active .bar:nth-child(0){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transform: 0.3s;
+    }
+
+    .nav-item{
+        margin: 16px 0;
+    }
+
+    .nav-menu.active{
+        left: 0;
+    }
+}

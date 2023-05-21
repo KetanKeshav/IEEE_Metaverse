@@ -6,7 +6,11 @@
   transition: 0.5s ease;
   font-family: "Poppins", sans-serif;
 }
+
 body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   background: #11131e;
   margin: 0;
 }
@@ -170,12 +174,12 @@ p {
 /* Body code */
 
 .main {
-
+  flex: 1;
   padding: 0;
   color: white;
   background: #11131e;
+  margin-bottom: -50px;
 }
-
 .main .cop {
   position: relative;
   top: 80px;
@@ -209,12 +213,27 @@ p {
   font-weight: 300;
   color: white;
 }
-
-
-
-.footer p {
-  font-size: 10px;
+/* footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0f111a;
+  padding: 10px 0;
+  text-align: center;
   color: white;
+}
+
+footer p {
+  font-size: 12px;
+  margin-bottom: 5px;
+} */
+
+footer {
+  height: 50px;
+  background: #0f111a;
+  color: white;
+  padding: 10px;
   text-align: center;
 }
 

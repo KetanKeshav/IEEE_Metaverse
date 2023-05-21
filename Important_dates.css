@@ -49,7 +49,7 @@ body {
   font-size: 12px;
 }
 
-.navbar-links li:hover {
+.navbar-links li a:hover {
   background-color: #75d481;
 }
 

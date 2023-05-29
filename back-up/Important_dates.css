@@ -1,0 +1,229 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&family=Albert+Sans:ital,wght@0,100;0,500;0,700;1,800&family=Alexandria:wght@100;500;700&family=Antic+Didone&family=Cantarell&family=Electrolize&family=Fira+Sans+Condensed&family=Hind+Vadodara&family=Lato&family=Libre+Franklin:wght@800&family=Lora&family=Montserrat:wght@400;500;600;700;900&family=Open+Sans:wght@500&family=Playfair+Display:ital,wght@0,600;0,700;1,700&family=Poppins:wght@700&family=Roboto:wght@300;700&family=Signika:wght@300&family=Work+Sans:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0f111a;
+  transition: 0.5s ease;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #0f111a;
+}
+/* Navbar styling */
+.navbar {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0f111a;
+  color: white;
+}
+
+.brand-title img {
+  padding-left: 10px;
+  width: 100px;
+  height: 50px;
+}
+
+.navbar-links {
+  height: 100%;
+}
+
+.navbar-links ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links li {
+  list-style: none;
+}
+
+.navbar-links li a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  font-size: 12px;
+}
+
+.navbar-links li a:hover {
+  background-color: #75d481;
+}
+
+.navbar-links li a:hover {
+  color: #0f111a;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggle-button .bar {
+  height: 3px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+.card-dates .date-topic {
+  font-size: 17px;
+  color: #0f111a;
+  font-weight: 600;
+}
+
+.card-dates .date-work {
+  font-size: 15px;
+  color: white;
+  font-weight: 400;
+}
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .toggle-button {
+    display: flex;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-links ul {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navbar-links ul li {
+    text-align: center;
+  }
+
+  .navbar-links ul li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-links.active {
+    display: flex;
+  }
+
+  .main .cop p {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .waves {
+    height: 40px;
+    min-height: 40px;
+  }
+  .content {
+    height: 30vh;
+  }
+  h1 {
+    font-size: 24px;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(0) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    transform: 0.3s;
+  }
+
+  .nav-item {
+    margin: 16px 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .main .cop p {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  .main .cop p {
+    font-size: 24px;
+  }
+}
+
+.card-dates {
+  width: 190px;
+  height: 254px;
+  background: rgb(7, 45, 46);
+  background: linear-gradient(
+    0deg,
+    rgba(7, 45, 46, 1) 1%,
+    rgba(19, 172, 103, 1) 48%
+  );
+  -webkit-box-shadow: 4px 6px 14px #00000036;
+  box-shadow: 4px 6px 14px #00000036;
+  border-radius: 3px;
+  color: #f9f9f9;
+  padding: 16px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  justify-content: space-around;
+  text-align: center;
+  font-family: "Work Sans", sans-serif;
+}
+.card-dates p {
+  background: none;
+  font-size: 1.3em;
+}
+.card-dates:hover {
+  margin-top: -30px;
+}
+.combined-dates {
+  background: none;
+  /* font-size: 1.3em; */
+}
+.small-text {
+  font-size: 1.1em !important;
+}
+.card-box {
+  /* margin-top: 200px; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* margin-top: 200px; */
+  margin-bottom: 50px;
+}

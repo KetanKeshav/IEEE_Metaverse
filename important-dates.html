@@ -220,179 +220,219 @@
     </main>
 
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Section</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-    
-      .faq-container {
-        max-width: 800px;
-        margin: 50px auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-    
-      .faq-question {
-        cursor: pointer;
-        font-weight: bold;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-    
-      .faq-question i {
-        transition: transform 0.3s ease;
-      }
-    
-      .faq-question .icon {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        text-align: center;
-      }
-    
-      .faq-question.open .icon {
-        transform: rotate(45deg);
-      }
-    
-      .faq-answer {
-        display: none;
-        margin-top: 10px;
-        padding-left: 20px;
-      }
-    
-      .faq-answer p {
-        margin: 0;
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const questions = document.querySelectorAll(".faq-question");
-    
-        questions.forEach((question) => {
-          question.addEventListener("click", function () {
-            this.classList.toggle("open");
-            const answer = this.nextElementSibling;
-            if (answer.style.display === "none") {
-              answer.style.display = "block";
-            } else {
-              answer.style.display = "none";
-            }
-          });
-        });
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ Section</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    transition: background-color 0.2s ease;
+  }
+
+  .faq-question:hover {
+    background-color: #f0f0f0;
+  }
+
+  .faq-question .question-text {
+    font-weight: bold;
+  }
+
+  .faq-question .icon {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .faq-answer {
+    display: none;
+    margin-top: 10px;
+    padding: 10px 20px;
+    line-height: 1.5;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach((question) => {
+      question.addEventListener("click", function () {
+        this.classList.toggle("open");
+        const answer = this.nextElementSibling;
+        const icon = this.querySelector(".icon");
+        if (this.classList.contains("open")) {
+          answer.style.display = "block";
+          icon.innerHTML = "&#x2212;";
+        } else {
+          answer.style.display = "none";
+          icon.innerHTML = "+";
+        }
       });
-    </script>
-    </head>
-    <body>
-    
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">Till what date can I submit my Idea for the Hack the Metaverse? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>You can submit your idea until 30th August 2023.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">What are the Applications themes to which I can submit the idea? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <ul>
-            <li>a. Healthcare</li>
-            <li>b. Education and Training</li>
-            <li>c. Travel and Tourism</li>
-            <li>d. Industrial and Enterprise</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">What are the technologies to which I can submit the idea? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <ul>
-            <li>AR/VR/XR and AI</li>
-            <li>5G IoT / Web 3.0</li>
-            <li>Cyber Security / Block Chain</li>
-          </ul>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">When will I get to know if my Idea is selected? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>You should have already received intimation if you have submitted before 8 Aug 2023 else we will be sending it as and when you submit the idea on or before 1 Sept 2023.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">What is refund registration fees and when is the last date for refund registration fees? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>All shortlisted teams MUST register the team by paying a registration fee of Rs 1000/- immediately after acceptance or latest by 4 Sept 2023 through NEFT/Online transfer and fill the google form below. <a href="https://forms.gle/kVCFEGHp2KFaFiAh6" target="_blank">https://forms.gle/kVCFEGHp2KFaFiAh6</a></p>
-          <p>Account Name - THE IEEE COMPUTER SOCIETY BANGALORE CHAPTER</p>
-          <p>Account no - 272601000758</p>
-          <p>IFSC - ICIC0002726</p>
-          <p>Type: Savings</p>
-          <p>Account Branch - Vyalikaval, Bangalore</p>
-          <p>Remarks - Metaverse - Team name and number as per CMT</p>
-          <p>This fee is FULLY refundable if the team participates for the duration of the event; else, there will not be any refund.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">How to apply for travel grants? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>Each team who are outside Bengaluru will be receiving travel grant form to fill the details. Based on the teams Idea and the travel grant application, a partial travel will be reimbursed after the hackathon.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">Will I get accommodation for all the days of the event? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>NO. The possible accommodation venue/hotel/hostels will be listed on the website. The participants should book for themself and pay the expenses of the accommodation. No refund/reimbursement of accommodation will be given by the organisers.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">What hardware or infrastructure support will be provided by the organisers? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>Wifi would be provided by the organisers. Rest hardware/software requirements and laptop should be arranged by the participants/teams themselves.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">Will I be provided by food/snacks during the event? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>Yes, the details are as follows:</p>
-          <p>12th Sept - Symposium Talks - Breakfast and Lunch, 2 tea/coffee breaks</p>
-          <p>13th Sept - Tutorial followed by Hackathon Commences - Breakfast, Lunch and Dinner, 2 tea/coffee breaks</p>
-          <p>14th Sept - Hackathon Continues - Breakfast, Lunch and Dinner, 2 tea/coffee breaks</p>
-          <p>15th Sept - Hackathon Finale - Breakfast and Lunch, 1 tea/coffee break</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">Where will be the event held for all the four days? <span class="icon">+</span></div>
-        <div class="faq-answer">
-          <p>The event will be held at:</p>
-          <p>IIIT Bangalore International Institute of Information Technology Bangalore</p>
-          <p>26/C, Electronics City, Hosur Road, Bengaluru, Karnataka 560100</p>
-          <p><a href="https://www.iiitb.ac.in" target="_blank">www.iiitb.ac.in</a></p>
-          <p><a href="https://maps.google.com/maps/dir//International+Institute+of+Information+Technology,+Bangalore+26%2FC,+Hosur+Rd+Electronics+City+Phase+1,+Electronic+City+Bengaluru,+Karnataka+560100/@12.8449599,77.6632162,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3bae135aeb7f340f:0x3ad86af40d2ac611" target="_blank">How to reach</a></p>
-        </div>
-      </div>
+    });
+  });
+</script>
+</head>
+<body>
+
+<div class="faq-container">
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">Till what date can I submit my Idea for the Hack the Metaverse?</div>
+      <div class="icon">+</div>
     </div>
-    
-    </body>
-    </html>
+    <div class="faq-answer">
+      <p>You can submit your idea until 30th August 2023.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">What are the Applications themes to which I can submit the idea?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <ul>
+        <li>Healthcare</li>
+        <li>Education and Training</li>
+        <li>Travel and Tourism</li>
+        <li>Industrial and Enterprise</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">What are the technologies to which I can submit the idea?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <ul>
+        <li>AR/VR/XR and AI</li>
+        <li>5G IoT / Web 3.0</li>
+        <li>Cyber Security / Block Chain</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">When will I get to know if my Idea is selected?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <p>You should have already received intimation if you submitted before 8 Aug 2023; else, we will send it when you submit the idea on or before 1 Sept 2023.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">What is refund registration fees and when is the last date for refund registration fees?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <p>All shortlisted teams MUST register the team by paying a registration fee of Rs 1000/- immediately after acceptance or latest by 4 Sept 2023 through NEFT/Online transfer and fill the <a href="https://forms.gle/kVCFEGHp2KFaFiAh6" target="_blank">Google form</a>.</p>
+      <p>Account Name: THE IEEE COMPUTER SOCIETY BANGALORE CHAPTER</p>
+      <p>Account no: 272601000758</p>
+      <p>IFSC: ICIC0002726</p>
+      <p>Type: Savings</p>
+      <p>Account Branch: Vyalikaval, Bangalore</p>
+      <p>Remarks: Metaverse - Team name and number as per CMT</p>
+      <p>This fee is FULLY refundable if the team participates for the duration of the event; else, there will not be any refund.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">How to apply for travel grants?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <p>Teams from outside Bengaluru will receive a travel grant form to fill out. Based on the team's idea and the travel grant application, partial travel expenses will be reimbursed after the hackathon.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">Will I get accommodation for all the days of the event?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <p>No, the possible accommodation venues will be listed on the website. Participants should book and pay for their own accommodation; no refund or reimbursement will be given for accommodation expenses.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">What hardware or infrastructure support will be provided?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <p>Organizers will provide Wi-Fi. Participants/teams should arrange their own hardware/software requirements and laptops.</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">Will I be provided with food/snacks during the event?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <p>Yes, details are as follows:</p>
+      <p>12th Sept - Symposium Talks: Breakfast and Lunch, 2 tea/coffee breaks</p>
+      <p>13th Sept - Tutorial followed by Hackathon Commences: Breakfast, Lunch and Dinner, 2 tea/coffee breaks</p>
+      <p>14th Sept - Hackathon Continues: Breakfast, Lunch and Dinner, 2 tea/coffee breaks</p>
+      <p>15th Sept - Hackathon Finale: Breakfast and Lunch, 1 tea/coffee break</p>
+    </div>
+  </div>
+  
+  <div class="faq-item">
+    <div class="faq-question">
+      <div class="question-text">Where will the event be held for all four days?</div>
+      <div class="icon">+</div>
+    </div>
+    <div class="faq-answer">
+      <p>The event will be held at:</p>
+      <p>IIIT Bangalore International Institute of Information Technology Bangalore</p>
+      <p>26/C, Electronics City, Hosur Road, Bengaluru, Karnataka 560100</p>
+      <p><a href="https://www.iiitb.ac.in" target="_blank">www.iiitb.ac.in</a></p>
+      <p><a href="https://maps.google.com/maps/dir//International+Institute+of+Information+Technology,+Bangalore+26%2FC,+Hosur+Rd+Electronics+City+Phase+1,+Electronic+City+Bengaluru,+Karnataka+560100/@12.8449599,77.6632162,16z/data=!4m5!4m4!1m0!1m2!1m1!1s0x3bae135aeb7f340f:0x3ad86af40d2ac611" target="_blank">How to reach</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
     
 
     

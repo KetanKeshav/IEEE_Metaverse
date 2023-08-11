@@ -257,6 +257,22 @@
         margin: 0;
       }
     </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const questions = document.querySelectorAll(".faq-question");
+    
+        questions.forEach((question) => {
+          question.addEventListener("click", function () {
+            const answer = this.nextElementSibling;
+            if (answer.style.display === "none") {
+              answer.style.display = "block";
+            } else {
+              answer.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
     </head>
     <body>
     
@@ -275,6 +291,7 @@
     
     </body>
     </html>
+    
     
     <footer>
         <div class="footer-wrappr " data-background="assets/img/gallery/footer-bg.png">

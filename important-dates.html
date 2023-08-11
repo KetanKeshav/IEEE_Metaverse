@@ -221,76 +221,87 @@
 
 
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Section</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-      }
-    
-      .faq-container {
-        max-width: 800px;
-        margin: 50px auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-    
-      .faq-question {
-        cursor: pointer;
-        font-weight: bold;
-      }
-    
-      .faq-answer {
-        display: none;
-        margin-top: 10px;
-        padding-left: 20px;
-      }
-    
-      .faq-answer p {
-        margin: 0;
-      }
-    </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const questions = document.querySelectorAll(".faq-question");
-    
-        questions.forEach((question) => {
-          question.addEventListener("click", function () {
-            const answer = this.nextElementSibling;
-            if (answer.style.display === "none") {
-              answer.style.display = "block";
-            } else {
-              answer.style.display = "none";
-            }
-          });
-        });
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ Section</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .faq-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .faq-question {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question i {
+    transition: transform 0.3s ease;
+  }
+
+  .faq-question.open i {
+    transform: rotate(45deg);
+  }
+
+  .faq-answer {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  .faq-answer p {
+    margin: 0;
+  }
+</style>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach((question) => {
+      question.addEventListener("click", function () {
+        this.classList.toggle("open");
+        const answer = this.nextElementSibling;
+        if (answer.style.display === "none") {
+          answer.style.display = "block";
+        } else {
+          answer.style.display = "none";
+        }
       });
-    </script>
-    </head>
-    <body>
-    
-    <div class="faq-container">
-      <div class="faq-item">
-        <div class="faq-question">Till what date can I submit my Idea for the Hack the Metaverse?</div>
-        <div class="faq-answer">
-          <p>You can submit your idea until 30th August 2023.</p>
-        </div>
-      </div>
-      <!-- Repeat the above structure for other FAQ items -->
-    
-      <!-- Add more FAQ items here -->
-    
+    });
+  });
+</script>
+</head>
+<body>
+
+<div class="faq-container">
+  <div class="faq-item">
+    <div class="faq-question">Till what date can I submit my Idea for the Hack the Metaverse? <i class="fas fa-plus"></i></div>
+    <div class="faq-answer">
+      <p>You can submit your idea until 30th August 2023.</p>
     </div>
-    
-    </body>
-    </html>
+  </div>
+
+</div>
+
+</body>
+</html>
+
     
     
     <footer>
